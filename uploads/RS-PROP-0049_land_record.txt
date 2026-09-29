@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0049-2
+Property ID      : RS-PROP-0049
+Registered Owner : Meenakshi Ramesh
+Survey Number    : SUR-218/2B
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Keelkattalai, Guindy, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2021-08-12
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

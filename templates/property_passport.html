@@ -1,0 +1,589 @@
+{% extends "base.html" %}
+
+{% block title %}Property Passport: {{ prop.property_id }} — REALSAFE{% endblock %}
+
+{% block content %}
+<!-- Passport Hero Banner -->
+<div class="passport-hero">
+  <div>
+    <div style="font-size: 11px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.8px; margin-bottom: 6px;">
+      OFFICIAL PROPERTY DIGITAL PASSPORT &bull; SINGLE SOURCE OF TRUTH
+    </div>
+    <div class="passport-id-badge">
+      <span>Property ID:</span>
+      <span class="id">{{ prop.property_id }}</span>
+    </div>
+    
+    <!-- Identity-Property Linking Badge -->
+    <div class="identity-link-box">
+      <div class="id-check-icon">✓</div>
+      <div>
+        <div style="font-size: 13.5px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px;">
+          <span>{{ prop.owner_name }}</span>
+          <span class="badge badge-verified" style="font-size: 11px;">Identity Verified ✓</span>
+        </div>
+        <div style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">
+          Verified User ID: <strong style="color: #cbd5e1;">{{ prop.owner_id }}</strong> &bull; Fictional/Demo Verification Link
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Actions: Run Full Verification Scan / Initiate Safe Transfer -->
+  <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+    <div style="display: flex; gap: 8px;">
+      <form method="POST" action="{{ url_for('run_verification', property_id=prop.property_id) }}">
+        <button type="submit" class="btn btn-secondary">
+          <span>🔄</span> Re-Run Multi-Vector Verification
+        </button>
+      </form>
+
+      <a href="{{ url_for('initiate_transfer_page', property_id=prop.property_id) }}" class="btn btn-primary">
+        <span>🤝</span> Initiate Safe Transfer
+      </a>
+    </div>
+
+    <!-- Interactive Hackathon Tamper Simulation Controls -->
+    <div style="background: #091322; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 8px 12px; display: flex; gap: 8px; align-items: center;">
+      <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">TAMPER LAB:</span>
+      <form method="POST" action="{{ url_for('simulate_tamper_route', property_id=prop.property_id) }}" style="display: inline;">
+        <button type="submit" class="btn btn-danger btn-sm" title="Modifies file bytes on disk to test SHA-256 detection">
+          ⚡ Alter File (Tamper)
+        </button>
+      </form>
+      <form method="POST" action="{{ url_for('restore_file_route', property_id=prop.property_id) }}" style="display: inline;">
+        <button type="submit" class="btn btn-secondary btn-sm" title="Restores clean file and valid hash">
+          ↺ Restore Clean
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Latest System Verification Audit Banner -->
+{% if last_verif %}
+<div style="background: #0d1627; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 12px 18px; margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
+  <div>
+    <div style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.6px;">
+      LATEST SYSTEM VERIFICATION AUDIT &bull; {{ last_verif.checked_at }}
+    </div>
+    <div style="font-size: 13.5px; color: #fff; margin-top: 3px;">
+      Type: <strong>{{ last_verif.verification_type }}</strong> &bull; Status: 
+      {% if last_verif.final_status == 'Verified' or last_verif.result == 'Verified' %}
+        <span class="badge badge-verified" style="font-size: 11px;">✓ Verified</span>
+      {% elif 'High' in (last_verif.final_status or last_verif.result or '') %}
+        <span class="badge badge-high-risk" style="font-size: 11px;">🔴 High Risk</span>
+      {% elif 'Critical' in (last_verif.final_status or last_verif.result or '') %}
+        <span class="badge badge-critical-risk" style="font-size: 11px;">🛑 Critical Risk</span>
+      {% else %}
+        <span class="badge badge-review-required" style="font-size: 11px;">⚠ {{ last_verif.final_status or last_verif.result }}</span>
+      {% endif %}
+    </div>
+  </div>
+  <div style="display: flex; gap: 14px; font-size: 12px; color: var(--text-secondary);">
+    <div>Hash Integrity: <strong style="color: {% if last_verif.hash_result == 'Match' %}#34d399{% else %}#f87171{% endif %};">{{ last_verif.hash_result or 'Checked' }}</strong></div>
+    <div>Mismatch Check: <strong style="color: {% if last_verif.mismatch_result == 'Consistent' %}#34d399{% else %}#f87171{% endif %};">{{ last_verif.mismatch_result or 'Checked' }}</strong></div>
+    <div>ML Inferred: <strong style="color: {% if last_verif.ml_prediction == 'Suspicious' %}#f87171{% else %}#34d399{% endif %};">{{ last_verif.ml_prediction or 'Evaluated' }}</strong></div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Main 2-Column Grid -->
+<div class="passport-container">
+  
+  <!-- LEFT COLUMN: Key Attributes, Cross-Document Matrix, Documents, Ownership Timeline, Audit -->
+  <div>
+
+    <!-- Key Property Attributes Grid -->
+    <div class="card">
+      <div class="card-header">
+        <h3><span>📐</span> Cadastral & Legal Specifications</h3>
+        <span class="badge badge-neutral">{{ prop.ownership_status }} Record</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; font-size: 13.5px;">
+        <div style="background: #0d1627; padding: 10px 12px; border-radius: var(--radius-sm);">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Survey Number</div>
+          <div style="font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: #fff; margin-top: 2px;">
+            {{ prop.survey_number }}
+          </div>
+        </div>
+
+        <div style="background: #0d1627; padding: 10px 12px; border-radius: var(--radius-sm);">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Land Area</div>
+          <div style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 2px;">
+            {{ prop.land_area|int }} {{ prop.area_unit }}
+          </div>
+        </div>
+
+        <div style="background: #0d1627; padding: 10px 12px; border-radius: var(--radius-sm);">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Property Type</div>
+          <div style="font-size: 15px; font-weight: 700; color: #fff; margin-top: 2px;">
+            {{ prop.property_type }}
+          </div>
+        </div>
+
+        <div style="background: #0d1627; padding: 10px 12px; border-radius: var(--radius-sm);">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Location / Village</div>
+          <div style="font-size: 14px; font-weight: 600; color: #fff; margin-top: 2px;">
+            {{ prop.village }}, {{ prop.taluk }}
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted);">{{ prop.district }} District</div>
+        </div>
+
+        <div style="background: #0d1627; padding: 10px 12px; border-radius: var(--radius-sm);">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Registration Date</div>
+          <div style="font-size: 14px; font-weight: 600; color: #fff; margin-top: 2px;">
+            {{ prop.registration_date }}
+          </div>
+        </div>
+
+        <div style="background: #0d1627; padding: 10px 12px; border-radius: var(--radius-sm);">
+          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Previous Owner</div>
+          <div style="font-size: 14px; font-weight: 600; color: #fff; margin-top: 2px;">
+            {{ prop.previous_owner or 'None Recorded' }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Risk Alerts & Discrepancies -->
+    {% if alerts %}
+      <div class="card" style="border-color: #ef4444; background: rgba(239, 68, 68, 0.04);">
+        <div class="card-header">
+          <h3 style="color: #f87171;"><span>⚠️</span> Detected Risk Alerts ({{ alerts|length }})</h3>
+          <span class="badge badge-high-risk">Action Required</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          {% for alert in alerts %}
+            <div style="background: #0d1627; border-left: 3px solid {% if alert.severity == 'High' %}#ef4444{% else %}#f59e0b{% endif %}; border-radius: 4px; padding: 10px 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                <strong style="color: #fff; font-size: 13.5px;">{{ alert.alert_type }}</strong>
+                <span class="badge {% if alert.severity == 'High' %}badge-high-risk{% else %}badge-review-required{% endif %}">
+                  {{ alert.severity }} Severity
+                </span>
+              </div>
+              <p style="font-size: 13px; color: var(--text-secondary); margin: 0;">
+                {{ alert.description }}
+              </p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Cross-Document Comparison Matrix -->
+    <div class="card">
+      <div class="card-header">
+        <h3><span>🔍</span> Cross-Document Inconsistency Matrix</h3>
+        <span class="badge badge-neutral">Field Reconciliation</span>
+      </div>
+      <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 12px;">
+        Direct side-by-side comparison across submitted title deeds, land records, and registration metadata:
+      </p>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Document / Source</th>
+              <th>Owner Name</th>
+              <th>Survey Number</th>
+              <th>Land Area</th>
+              <th>Location</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Master Record Row -->
+            <tr style="background: #0a1324;">
+              <td><strong style="color: var(--accent-cyan);">Master Record</strong></td>
+              <td><strong>{{ prop.owner_name }}</strong></td>
+              <td><span style="font-family: var(--font-mono);">{{ prop.survey_number }}</span></td>
+              <td>{{ prop.land_area|int }} sq.ft</td>
+              <td>{{ prop.village }}</td>
+              <td><span class="badge badge-neutral">Baseline</span></td>
+            </tr>
+
+            <!-- Extracted Document Rows -->
+            {% for doc in documents %}
+              <tr>
+                <td>
+                  <strong>{{ doc.document_type }}</strong>
+                  <div class="mono-id" style="font-size: 11px;">{{ doc.document_id }}</div>
+                </td>
+                <td>
+                  <span style="{% if doc.owner_name and doc.owner_name.strip().lower() != prop.owner_name.strip().lower() %}color: #f87171; font-weight: 700; background: rgba(239, 68, 68, 0.1); padding: 2px 4px; border-radius: 3px;{% endif %}">
+                    {{ doc.owner_name or prop.owner_name }}
+                  </span>
+                </td>
+                <td>
+                  <span style="font-family: var(--font-mono); {% if doc.survey_number and doc.survey_number.strip().lower() != prop.survey_number.strip().lower() %}color: #f87171; font-weight: 700; background: rgba(239, 68, 68, 0.1); padding: 2px 4px; border-radius: 3px;{% endif %}">
+                    {{ doc.survey_number or prop.survey_number }}
+                  </span>
+                </td>
+                <td>
+                  <span style="{% if doc.land_area and (doc.land_area - prop.land_area)|abs > 10 %}color: #fbbf24; font-weight: 700;{% endif %}">
+                    {{ (doc.land_area or prop.land_area)|int }} sq.ft
+                  </span>
+                </td>
+                <td>{{ doc.location or prop.location }}</td>
+                <td>
+                  {% if doc.verification_status == 'Verified' %}
+                    <span class="badge badge-verified">✓ Consistent</span>
+                  {% elif doc.verification_status == 'Hash Mismatch' %}
+                    <span class="badge badge-high-risk">⚠ Tampered</span>
+                  {% else %}
+                    <span class="badge badge-review-required">⚠ Review Req.</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Document Cryptographic Ledger (SHA-256) -->
+    <div class="card">
+      <div class="card-header">
+        <h3><span>📁</span> Document Vault & SHA-256 Ledger</h3>
+        <span class="badge badge-neutral">{{ documents|length }} Registered Documents</span>
+      </div>
+
+      <div style="background: rgba(56, 189, 248, 0.06); border-left: 3px solid var(--accent-cyan); padding: 10px 14px; border-radius: 4px; font-size: 12px; color: #bae6fd; margin-bottom: 14px; line-height: 1.5;">
+        <strong>Cryptographic Verification Notice:</strong> SHA-256 verifies whether the file content has changed relative to the previously recorded hash. Hash verification proves document integrity, not ownership legality.
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Document Type</th>
+              <th>Filename</th>
+              <th>SHA-256 Hash</th>
+              <th>Upload Date</th>
+              <th>Integrity Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for doc in documents %}
+              <tr>
+                <td>
+                  <strong>{{ doc.document_type }}</strong>
+                  <div style="font-size: 11px; color: var(--text-muted);">{{ doc.document_id }}</div>
+                </td>
+                <td>
+                  <span style="font-size: 12px; color: #94a3b8;">{{ doc.filename }}</span>
+                </td>
+                <td>
+                  <span class="mono-hash" title="{{ doc.sha256_hash }}">{{ doc.sha256_hash }}</span>
+                </td>
+                <td>{{ doc.upload_date }}</td>
+                <td>
+                  {% if doc.verification_status == 'Verified' %}
+                    <span class="badge badge-verified">✓ Match</span>
+                  {% elif doc.verification_status == 'Hash Mismatch' %}
+                    <span class="badge badge-high-risk">⚠ Hash Mismatch</span>
+                  {% else %}
+                    <span class="badge badge-review-required">Pending</span>
+                  {% endif %}
+                </td>
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--text-muted); padding: 16px;">
+                  No documents attached to this property record.
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Supplemental Document Upload Form -->
+      <div style="margin-top: 16px; background: #0d1627; border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--border-color);">
+        <h4 style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 12px;">
+          ➕ Upload Supplemental Verification Document
+        </h4>
+        <form method="POST" action="{{ url_for('upload_document_route', property_id=prop.property_id) }}" enctype="multipart/form-data" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 100px; gap: 10px; align-items: flex-end;">
+          <div>
+            <label style="font-size: 11px; color: var(--text-muted); display: block; margin-bottom: 4px;">Document Type</label>
+            <select name="document_type" class="form-control" required>
+              <option value="Sale Deed">Sale Deed</option>
+              <option value="Land Record">Land Record (Patta/Chitta)</option>
+              <option value="Encumbrance Certificate">Encumbrance Certificate</option>
+              <option value="Property Tax Receipt">Property Tax Receipt</option>
+              <option value="Ownership Certificate">Ownership Certificate</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 11px; color: var(--text-muted); display: block; margin-bottom: 4px;">Select File (.txt, .pdf, .doc)</label>
+            <input type="file" name="file" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="height: 38px;">
+            Upload
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Chronological Ownership Timeline -->
+    <div class="card">
+      <div class="card-header">
+        <h3><span>⏳</span> Chronological Chain of Title (Ownership History)</h3>
+        <span class="badge badge-neutral">Historical Ledger</span>
+      </div>
+
+      <div class="timeline">
+        {% for hist in history %}
+          <div class="timeline-item">
+            <div class="timeline-dot {% if not hist.end_date %}current{% endif %} {% if hist.notes and 'gap' in hist.notes|lower %}conflict{% endif %}"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">
+                {{ hist.start_date }} &rarr; {{ hist.end_date or 'Present (Active Owner)' }}
+              </div>
+              <div class="timeline-title">
+                {{ hist.owner_name }}
+              </div>
+              <div class="timeline-desc">
+                Reference: <strong>{{ hist.transfer_reference }}</strong> &bull; {{ hist.notes }}
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div style="color: var(--text-muted); font-size: 13px; padding: 12px;">
+            No historical ownership records found.
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN: Risk Engine, SHAP Explainability, Pre-Transaction Safety Check -->
+  <div>
+
+    <!-- Risk Score Meter Box -->
+    <div class="card">
+      <div class="card-header">
+        <h3><span>🛡️</span> Risk Scoring Engine</h3>
+        <span style="font-size: 11.5px; color: var(--text-muted);">Explainable 0–100</span>
+      </div>
+
+      <div class="risk-meter-box">
+        <div class="risk-circle {% if prop.risk_score >= 80 %}red{% elif prop.risk_score >= 60 %}red{% elif prop.risk_score >= 30 %}amber{% else %}green{% endif %}">
+          <div class="risk-number">{{ prop.risk_score }}</div>
+          <div class="risk-denom">/ 100 RISK</div>
+        </div>
+
+        <div style="margin-top: 10px;">
+          <span class="badge {% if prop.risk_score >= 80 %}badge-critical-risk{% elif prop.risk_score >= 60 %}badge-high-risk{% elif prop.risk_score >= 30 %}badge-review-required{% else %}badge-low-risk{% endif %}" style="font-size: 13px; padding: 6px 14px;">
+            {{ prop.risk_level }}
+          </span>
+        </div>
+
+        <div style="font-size: 12.5px; color: var(--text-secondary); margin-top: 12px; line-height: 1.4;">
+          {{ risk_recommendation }}
+        </div>
+        
+        <div style="font-size: 11px; color: var(--text-muted); margin-top: 10px; border-top: 1px solid var(--border-subtle); padding-top: 8px;">
+          <strong>Composite Score:</strong> Rule-based engine aggregating cryptographic hash, cadastral reconciliation, ownership continuity, and ML likelihood.
+        </div>
+      </div>
+
+      <!-- Explainable Breakdown of Reasons -->
+      <div style="margin-top: 16px;">
+        <div style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.6px; margin-bottom: 8px;">
+          POINT ACCRUAL BREAKDOWN (WHY THIS SCORE?):
+        </div>
+
+        {% if risk_reasons %}
+          <ul class="reasons-list">
+            {% for r in risk_reasons %}
+              <li class="{% if r.points >= 25 %}red-factor{% endif %}">
+                <div>
+                  <strong style="color: #fff;">{{ r.factor }}</strong>
+                  <div style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">{{ r.explanation }}</div>
+                </div>
+                <span class="points-tag">+{{ r.points }} pts</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div style="background: #0d1627; padding: 12px; border-radius: 4px; font-size: 12.5px; color: #34d399;">
+            ✓ Zero risk penalties accrued. All attributes strictly match baseline parameters.
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Pre-Transaction Safety Check (Section 17 Requirement) -->
+    <div class="card" style="border-color: #1e3a5f;">
+      <div class="card-header">
+        <h3><span>🚦</span> Pre-Transaction Safety Check</h3>
+        <span class="badge badge-neutral">Buyer Diligence Checklist</span>
+      </div>
+
+      <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 12px;">
+        Run this checklist prior to transferring booking amounts or signing agreements:
+      </p>
+
+      <div class="safety-check-box">
+        <!-- Item 1: Identity -->
+        <div class="safety-item">
+          <div class="safety-icon" style="color: #10b981;">✓</div>
+          <div>
+            <strong style="color: #fff;">Identity Link Verified</strong>
+            <div style="font-size: 11.5px; color: var(--text-muted);">
+              User {{ prop.owner_id }} authenticated in demo registry.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Property Registration -->
+        <div class="safety-item">
+          <div class="safety-icon" style="color: #10b981;">✓</div>
+          <div>
+            <strong style="color: #fff;">Property Master Record Active</strong>
+            <div style="font-size: 11.5px; color: var(--text-muted);">
+              Registered on {{ prop.registration_date }} in {{ prop.taluk }}.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Survey Discrepancy -->
+        <div class="safety-item">
+          {% if indicators.survey_mismatch %}
+            <div class="safety-icon" style="color: #ef4444;">❌</div>
+            <div>
+              <strong style="color: #f87171;">Survey Number Discrepancy Flagged</strong>
+              <div style="font-size: 11.5px; color: var(--text-muted);">Review survey number cross-match before proceeding.</div>
+            </div>
+          {% else %}
+            <div class="safety-icon" style="color: #10b981;">✓</div>
+            <div>
+              <strong style="color: #fff;">Survey Number Coherent</strong>
+              <div style="font-size: 11.5px; color: var(--text-muted);">Matches across cadastral files.</div>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Item 4: Duplicate Check -->
+        <div class="safety-item">
+          {% if indicators.duplicate_property %}
+            <div class="safety-icon" style="color: #f59e0b;">⚠️</div>
+            <div>
+              <strong style="color: #fbbf24;">Potential Duplicate Property Flagged</strong>
+              <div style="font-size: 11.5px; color: var(--text-muted);">Similar survey coordinates found under another ID.</div>
+            </div>
+          {% else %}
+            <div class="safety-icon" style="color: #10b981;">✓</div>
+            <div>
+              <strong style="color: #fff;">Duplicate Scan Clean</strong>
+              <div style="font-size: 11.5px; color: var(--text-muted);">No overlapping parcel registrations detected.</div>
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Item 5: Document Hash Integrity -->
+        <div class="safety-item">
+          {% if indicators.hash_mismatch %}
+            <div class="safety-icon" style="color: #ef4444;">❌</div>
+            <div>
+              <strong style="color: #f87171;">Document Hash Mismatch Detected</strong>
+              <div style="font-size: 11.5px; color: var(--text-muted);">File modified after registration ledger entry.</div>
+            </div>
+          {% else %}
+            <div class="safety-icon" style="color: #10b981;">✓</div>
+            <div>
+              <strong style="color: #fff;">Document Hashes Intact</strong>
+              <div style="font-size: 11.5px; color: var(--text-muted);">SHA-256 cryptographic signatures validated.</div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Recommendation Callout -->
+      <div style="background: #091322; border-radius: var(--radius-sm); padding: 12px; font-size: 12.5px; text-align: center;">
+        {% if prop.risk_score >= 60 %}
+          <div style="color: #f87171; font-weight: 700;">🛑 RECOMMENDATION: HOLD TRANSACTION</div>
+          <div style="color: var(--text-muted); font-size: 11.5px; margin-top: 2px;">
+            High risk indicators present. Physical land survey recommended.
+          </div>
+        {% elif prop.risk_score >= 30 %}
+          <div style="color: #fbbf24; font-weight: 700;">⚠️ RECOMMENDATION: REVIEW BEFORE PROCEEDING</div>
+          <div style="color: var(--text-muted); font-size: 11.5px; margin-top: 2px;">
+            Clarify highlighted field discrepancies with seller.
+          </div>
+        {% else %}
+          <div style="color: #34d399; font-weight: 700;">✓ RECOMMENDATION: SAFE TO PROCEED</div>
+          <div style="color: var(--text-muted); font-size: 11.5px; margin-top: 2px;">
+            All automated checks passed with clean indicators.
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Explainable AI – SHAP -->
+    <div class="card">
+      <div class="card-header">
+        <h3><span>🤖</span> Explainable AI – SHAP</h3>
+        <span class="badge badge-neutral">Feature Attribution</span>
+      </div>
+
+      <div style="background: #091322; border-radius: var(--radius-sm); padding: 12px; margin-bottom: 14px; border: 1px solid var(--border-subtle);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="font-size: 12px; color: var(--text-muted);">ML Prediction (Random Forest):</span>
+          <strong style="color: {% if xai.ml_prediction == 'Suspicious' %}#f87171{% else %}#34d399{% endif %}; font-size: 13px;">
+            {{ xai.ml_prediction }}
+          </strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="font-size: 12px; color: var(--text-muted);">Model Suspicious Probability:</span>
+          <strong style="color: #fff; font-family: var(--font-mono); font-size: 13px;">
+            {{ xai.suspicious_probability }}%
+          </strong>
+        </div>
+        <div style="font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 6px; margin-top: 6px; line-height: 1.4;">
+          <span style="color: var(--accent-cyan); font-weight: 600;">System Distinction:</span> ML Probability is derived purely from pattern recognition on the feature vector. The final <strong>{{ prop.risk_score }}/100 Risk Score</strong> aggregates ML prediction with deterministic cryptographic and cadastral checks.
+        </div>
+      </div>
+
+      <div style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.6px; margin-bottom: 8px;">
+        TOP RISK CONTRIBUTORS (SHAP ATTRIBUTION):
+      </div>
+
+      {% if xai.top_risk_drivers %}
+        <div class="shap-bar-container">
+          {% for driver in xai.top_risk_drivers %}
+            <div class="shap-bar-row">
+              <div class="shap-bar-label" title="{{ driver.label }}">{{ driver.label }}</div>
+              <div class="shap-bar-track">
+                <div class="shap-bar-fill" style="width: {{ (driver.impact * 150)|round(0) if driver.impact > 0 else 20 }}%;"></div>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: #f87171; width: 45px; text-align: right;">
+                +{{ (driver.impact * 100)|round(1) }}%
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+          No positive risk drivers pushing towards suspicious classification.
+        </div>
+      {% endif %}
+
+      <div style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.6px; margin: 12px 0 6px;">
+        WHY IS THIS PROPERTY FLAGGED? (PLAIN LANGUAGE):
+      </div>
+      <ul style="font-size: 12.5px; color: var(--text-secondary); padding-left: 18px; line-height: 1.5;">
+        {% for exp in xai.plain_explanation %}
+          <li>{{ exp }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0060-2
+Property ID      : RS-PROP-0060
+Registered Owner : Vijay Pillai
+Survey Number    : SUR-122/7C
+Plot Land Area   : 1200.0 sq.ft
+Revenue Location : Mangadu, Walajabad, Kanchipuram
+Execution Date   : 2023-12-02
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0035-4
+Property ID      : RS-PROP-0035
+Registered Owner : Karthik Gopal
+Survey Number    : SUR-353/4A
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Kallakudi, Tiruchirappalli West, Tiruchirappalli
+Execution Date   : 2019-08-22
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

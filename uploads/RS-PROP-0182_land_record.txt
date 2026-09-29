@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0182-2
+Property ID      : RS-PROP-0182
+Registered Owner : Venkatesh Reddy
+Survey Number    : SUR-510/71
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Irungattukottai, Kanchipuram, Kanchipuram
+State / Region   : Tamil Nadu
+Execution Date   : 2023-08-26
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

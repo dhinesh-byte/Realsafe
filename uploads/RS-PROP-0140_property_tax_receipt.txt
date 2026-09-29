@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0140-4
+Property ID      : RS-PROP-0140
+Registered Owner : Revathi Rao
+Survey Number    : SUR-959/2A
+Plot Land Area   : 1200.0 sq.ft
+Revenue Location : Madipakkam, Mylapore, Chennai
+Execution Date   : 2019-11-08
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

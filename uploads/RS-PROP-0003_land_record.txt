@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0003-2
+Property ID      : RS-PROP-0003
+Registered Owner : Uma Kumar
+Survey Number    : SUR-345/1B
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Pallavaram, Guindy, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2023-08-27
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

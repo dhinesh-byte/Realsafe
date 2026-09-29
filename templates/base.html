@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}REALSAFE — Digital Real Estate Scam Prevention Platform{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Top Prototype Disclaimer Banner -->
+  <div class="disclaimer-banner">
+    <span>🛡️</span>
+    <span>
+      <strong>PROTOTYPE NOTICE:</strong> REALSAFE is a scam-prevention prototype. Verification results are indicators only and do not constitute legal proof of ownership or government certification. Synthetic demo data only.
+    </span>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="app-header">
+    <div class="nav-container">
+      <a href="{{ url_for('dashboard') }}" class="brand-group">
+        <img class="brand-logo" src="{{ url_for('static', filename='logo.svg') }}" alt="REALSAFE logo">
+        <div class="brand-text">
+          <h1>REAL<span>SAFE</span></h1>
+          <div class="brand-tagline">Real-Estate Fraud Prevention Platform</div>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="{{ url_for('properties') }}" class="{% if request.endpoint in ['properties', 'property_passport', 'new_property'] %}active{% endif %}">
+          <span>🏢</span> Properties
+        </a>
+        <a href="{{ url_for('documents') }}" class="{% if request.endpoint == 'documents' %}active{% endif %}">
+          <span>📁</span> Documents
+        </a>
+        <a href="{{ url_for('transfers') }}" class="{% if request.endpoint == 'transfers' %}active{% endif %}">
+          <span>🤝</span> Transfers
+        </a>
+        <a href="{{ url_for('alerts') }}" class="{% if request.endpoint == 'alerts' %}active{% endif %}">
+          <span>⚠️</span> Alerts
+        </a>
+        <a href="{{ url_for('verification_center') }}" class="{% if request.endpoint == 'verification_center' %}active{% endif %}">
+          <span>🔬</span> Verification
+        </a>
+        <a href="{{ url_for('audit') }}" class="{% if request.endpoint == 'audit' %}active{% endif %}">
+          <span>📜</span> Audit Trail
+        </a>
+      </nav>
+
+      <!-- Active Persona & Quick Role Switcher -->
+      <div class="user-persona-group">
+        <div class="persona-badge">
+          <span class="persona-dot {{ session.get('user_role', 'admin') }}"></span>
+          <span><strong>{{ session.get('user_name', 'Demo Admin') }}</strong> ({{ session.get('user_role', 'admin')|capitalize }})</span>
+        </div>
+        
+        <div class="role-switcher-dropdown">
+          <a href="{{ url_for('switch_role', role='seller') }}" class="{% if session.get('user_role') == 'seller' %}active{% endif %}" title="Switch to Demo Seller">Seller</a>
+          <a href="{{ url_for('switch_role', role='buyer') }}" class="{% if session.get('user_role') == 'buyer' %}active{% endif %}" title="Switch to Demo Buyer">Buyer</a>
+          <a href="{{ url_for('switch_role', role='admin') }}" class="{% if session.get('user_role', 'admin') == 'admin' %}active{% endif %}" title="Switch to Demo Admin">Admin</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Flash Messaging -->
+  <main class="app-main">
+    <div class="flash-container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category if category != 'error' else 'danger' }}">
+              <span>{{ message }}</span>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Platform Footer -->
+  <footer class="app-footer">
+    <div class="footer-links">
+      <a href="{{ url_for('dashboard') }}">Dashboard</a> &bull;
+      <a href="{{ url_for('properties') }}">Property Directory</a> &bull;
+      <a href="{{ url_for('alerts') }}">Active Alerts</a> &bull;
+      <a href="{{ url_for('transfers') }}">Safe Transfers</a> &bull;
+      <a href="{{ url_for('audit') }}">Audit Ledger</a>
+    </div>
+    <p>
+      &copy; 2026 REALSAFE — Real-Estate Fraud Risk Detection & Document Verification Prototype.
+    </p>
+    <p style="margin-top: 4px; font-size: 11.5px; color: #475569;">
+      Open Government Reference Architecture: data.gov.in & Tamil Nadu GIS Administrative Reference Model. Fictional anonymized records only.
+    </p>
+  </footer>
+
+</body>
+</html>

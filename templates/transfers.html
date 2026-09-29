@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %}Safe Transfer Workflow & Review — REALSAFE{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">
+    <h2><span>🤝</span> Seller &rarr; Buyer Safe Transaction Pipeline</h2>
+    <p>Gatekeeper workflow ensuring identity validation, document tamper checks, and duplicate scans before payment.</p>
+  </div>
+</div>
+
+<!-- Workflow Stage Visualizer -->
+<div class="card" style="background: #091322; border-color: #1e3355; padding: 16px 20px;">
+  <div style="font-size: 11px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.6px; margin-bottom: 12px;">
+    SAFE TRANSACTION LIFECYCLE:
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--text-secondary);">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span class="badge badge-verified">1. Seller Submits</span>
+      <span>&rarr;</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span class="badge badge-neutral">2. Identity Link</span>
+      <span>&rarr;</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span class="badge badge-neutral">3. Document Hash Scan</span>
+      <span>&rarr;</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span class="badge badge-neutral">4. Duplicate & Mismatch Check</span>
+      <span>&rarr;</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span class="badge badge-neutral">5. Risk Score Gate</span>
+      <span>&rarr;</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span class="badge badge-review-required">6. Startup / Admin Review</span>
+      <span>&rarr;</span>
+    </div>
+    <div>
+      <span class="badge badge-verified">7. Safe Clearance</span>
+    </div>
+  </div>
+</div>
+
+<!-- Submit New Transfer Section -->
+<div class="card">
+  <div class="card-header">
+    <h3><span>➕</span> Initiate New Safe Property Transfer</h3>
+    <span class="badge badge-neutral">Seller Action</span>
+  </div>
+
+  <form method="POST" action="{{ url_for('initiate_transfer') }}" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) 160px; gap: 14px; align-items: flex-end;">
+    <div>
+      <label style="font-size: 12px; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+        Property to Transfer *
+      </label>
+      <select name="property_id" class="form-control" required>
+        <option value="">Select Property...</option>
+        {% for p in properties %}
+          <option value="{{ p.property_id }}" {% if selected_property_id == p.property_id %}selected{% endif %}>
+            {{ p.property_id }} — {{ p.owner_name }} (Risk: {{ p.risk_score }})
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label style="font-size: 12px; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+        Buyer Account / Persona *
+      </label>
+      <select name="buyer_id" class="form-control" required>
+        {% for u in buyers %}
+          <option value="{{ u.verified_user_id }}">{{ u.name }} ({{ u.verified_user_id }})</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <label style="font-size: 12px; color: var(--text-secondary); display: block; margin-bottom: 6px;">
+        Transfer Notes
+      </label>
+      <input type="text" name="notes" class="form-control" placeholder="e.g. Pre-agreement due diligence deposit">
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="height: 38px;">
+      <span>🔒</span> Submit Transfer
+    </button>
+  </form>
+</div>
+
+<!-- Active Transfers Ledger -->
+<div class="card" style="padding: 0; overflow: hidden;">
+  <div class="card-header" style="padding: 16px 20px; margin: 0;">
+    <h3><span>📑</span> Transfer Requests & Audit Queue ({{ transfers|length }})</h3>
+    <span class="badge badge-neutral">Pipeline Monitor</span>
+  </div>
+
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Transfer ID</th>
+          <th>Property</th>
+          <th>Seller</th>
+          <th>Buyer</th>
+          <th>Risk Score</th>
+          <th>Pipeline Status</th>
+          <th>Created Date</th>
+          <th>Startup / Admin Review Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for tr in transfers %}
+          <tr>
+            <td class="mono-id"><strong>{{ tr.transfer_id }}</strong></td>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=tr.property_id) }}" class="mono-id" style="text-decoration: none;">
+                {{ tr.property_id }}
+              </a>
+            </td>
+            <td>
+              <strong>{{ tr.seller_name or tr.seller_id }}</strong>
+              <div style="font-size: 11px; color: var(--text-muted);">{{ tr.seller_id }}</div>
+            </td>
+            <td>
+              <strong>{{ tr.buyer_name or tr.buyer_id }}</strong>
+              <div style="font-size: 11px; color: var(--text-muted);">{{ tr.buyer_id }}</div>
+            </td>
+            <td>
+              {% if tr.risk_score >= 60 %}
+                <span class="badge badge-high-risk">🔴 {{ tr.risk_score }} / 100</span>
+              {% elif tr.risk_score >= 30 %}
+                <span class="badge badge-review-required">🟡 {{ tr.risk_score }} / 100</span>
+              {% else %}
+                <span class="badge badge-low-risk">🟢 {{ tr.risk_score }} / 100</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if tr.status == 'Approved' %}
+                <span class="badge badge-verified">✓ Approved</span>
+              {% elif tr.status == 'Review Required' %}
+                <span class="badge badge-review-required">⚠ Review Required</span>
+              {% elif tr.status == 'Rejected' %}
+                <span class="badge badge-high-risk">❌ Rejected</span>
+              {% else %}
+                <span class="badge badge-neutral">⏳ {{ tr.status }}</span>
+              {% endif %}
+            </td>
+            <td>{{ tr.created_at[:16] }}</td>
+            <td>
+              <!-- Actual working action buttons modifying DB and logging audit! -->
+              <div style="display: flex; gap: 6px;">
+                <form method="POST" action="{{ url_for('update_transfer_status', transfer_id=tr.transfer_id, new_status='Approved') }}" style="display: inline;">
+                  <button type="submit" class="btn btn-secondary btn-sm" style="color: #34d399;" title="Approve Transfer">
+                    ✓ Approve
+                  </button>
+                </form>
+                <form method="POST" action="{{ url_for('update_transfer_status', transfer_id=tr.transfer_id, new_status='Review Required') }}" style="display: inline;">
+                  <button type="submit" class="btn btn-secondary btn-sm" style="color: #fbbf24;" title="Flag for In-depth Diligence">
+                    ⚠ Flag
+                  </button>
+                </form>
+                <form method="POST" action="{{ url_for('update_transfer_status', transfer_id=tr.transfer_id, new_status='Rejected') }}" style="display: inline;">
+                  <button type="submit" class="btn btn-secondary btn-sm" style="color: #f87171;" title="Reject Transfer">
+                    ✕ Reject
+                  </button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="8" style="text-align: center; padding: 32px; color: var(--text-muted);">
+              No property transfers currently in pipeline.
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

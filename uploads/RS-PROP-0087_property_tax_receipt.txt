@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0087-4
+Property ID      : RS-PROP-0087
+Registered Owner : Nandhini Gopal
+Survey Number    : SUR-882/4C
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Guduvancheri, Vandalur, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2020-02-13
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

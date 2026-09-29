@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0284-2
+Property ID      : RS-PROP-0284
+Registered Owner : Arun Sundaram
+Survey Number    : SUR-637/21
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Madipakkam, Velachery, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2023-05-09
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

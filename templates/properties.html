@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Property Verification Catalog — REALSAFE{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">
+    <h2><span>🏢</span> Property Digital Registry & Risk Directory</h2>
+    <p>Search and filter verified property records, detected discrepancies, and flagged duplicate parcels.</p>
+  </div>
+  <a href="{{ url_for('new_property') }}" class="btn btn-primary">
+    <span>➕</span> Add New Property
+  </a>
+</div>
+
+<!-- Search & Filter Form -->
+<div class="card" style="padding: 16px 20px;">
+  <form method="GET" action="{{ url_for('properties') }}" class="search-filter-bar">
+    <div class="search-input-group">
+      <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Search by Property ID, Owner Name, Survey Number, Village, Taluk, District...">
+    </div>
+
+    <div style="min-width: 180px;">
+      <select name="filter" class="form-control" onchange="this.form.submit()">
+        <option value="" {% if not active_filter %}selected{% endif %}>All Risk Categories ({{ total_count }})</option>
+        <option value="low" {% if active_filter == 'low' %}selected{% endif %}>🟢 Low Risk (0–29)</option>
+        <option value="review" {% if active_filter == 'review' %}selected{% endif %}>🟡 Review Required (30–59)</option>
+        <option value="high" {% if active_filter == 'high' %}selected{% endif %}>🔴 High Risk (60–100)</option>
+        <option value="duplicate" {% if active_filter == 'duplicate' %}selected{% endif %}>🟣 Potential Duplicate</option>
+        <option value="hash_mismatch" {% if active_filter == 'hash_mismatch' %}selected{% endif %}>⚠️ Hash Mismatch</option>
+        <option value="verified" {% if active_filter == 'verified' %}selected{% endif %}>✓ Verified Status</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">
+      <span>🔍</span> Filter
+    </button>
+
+    {% if query or active_filter %}
+      <a href="{{ url_for('properties') }}" class="btn btn-secondary" title="Clear Filters">Reset</a>
+    {% endif %}
+  </form>
+
+  <!-- Quick Filter Pills -->
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; font-size: 12px;">
+    <span style="color: var(--text-muted); align-self: center;">Quick Filters:</span>
+    <a href="{{ url_for('properties', filter='low') }}" class="badge badge-low-risk" style="text-decoration: none;">🟢 Low Risk</a>
+    <a href="{{ url_for('properties', filter='review') }}" class="badge badge-review-required" style="text-decoration: none;">🟡 Review Required</a>
+    <a href="{{ url_for('properties', filter='high') }}" class="badge badge-high-risk" style="text-decoration: none;">🔴 High Risk</a>
+    <a href="{{ url_for('properties', filter='duplicate') }}" class="badge badge-duplicate" style="text-decoration: none;">🟣 Potential Duplicate</a>
+    <a href="{{ url_for('properties', filter='hash_mismatch') }}" class="badge badge-high-risk" style="text-decoration: none;">⚠️ Hash Tampered</a>
+  </div>
+</div>
+
+<!-- Property Directory Table -->
+<div class="card" style="padding: 0; overflow: hidden;">
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Property ID</th>
+          <th>Owner Name</th>
+          <th>Survey No</th>
+          <th>Location</th>
+          <th>Plot Area</th>
+          <th>Property Type</th>
+          <th>Risk Score</th>
+          <th>Verification</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for prop in properties %}
+          <tr>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=prop.property_id) }}" class="mono-id" style="text-decoration: none;">
+                {{ prop.property_id }}
+              </a>
+            </td>
+            <td>
+              <strong>{{ prop.owner_name }}</strong>
+              <div style="font-size: 11px; color: var(--text-muted);">{{ prop.owner_id }}</div>
+            </td>
+            <td>
+              <span style="font-family: var(--font-mono); font-size: 12.5px; color: #e2e8f0;">{{ prop.survey_number }}</span>
+            </td>
+            <td>
+              <div>{{ prop.village }}, {{ prop.taluk }}</div>
+              <div style="font-size: 11px; color: var(--text-muted);">{{ prop.district }}</div>
+            </td>
+            <td>{{ prop.land_area|int }} {{ prop.area_unit }}</td>
+            <td>{{ prop.property_type }}</td>
+            <td>
+              {% if prop.risk_score >= 60 %}
+                <span class="badge badge-high-risk">
+                  🔴 {{ prop.risk_score }} / 100
+                </span>
+              {% elif prop.risk_score >= 30 %}
+                <span class="badge badge-review-required">
+                  🟡 {{ prop.risk_score }} / 100
+                </span>
+              {% else %}
+                <span class="badge badge-low-risk">
+                  🟢 {{ prop.risk_score }} / 100
+                </span>
+              {% endif %}
+            </td>
+            <td>
+              {% if prop.verification_status == 'Verified' %}
+                <span class="badge badge-verified">✓ Verified</span>
+              {% elif prop.verification_status == 'High Risk' %}
+                <span class="badge badge-high-risk">🔴 High Risk</span>
+              {% else %}
+                <span class="badge badge-review-required">⚠ Review Required</span>
+              {% endif %}
+            </td>
+            <td>
+              <div style="display: flex; gap: 6px;">
+                <a href="{{ url_for('property_passport', property_id=prop.property_id) }}" class="btn btn-secondary btn-sm" title="View Property Passport">
+                  Passport &rarr;
+                </a>
+              </div>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="9" style="text-align: center; padding: 32px; color: var(--text-muted);">
+              No properties match your current search and filter criteria.
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

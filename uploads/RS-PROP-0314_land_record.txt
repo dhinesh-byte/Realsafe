@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0314-2
+Property ID      : RS-PROP-0314
+Registered Owner : Rajesh Swaminathan
+Survey Number    : SUR-267/1C
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Srirangam Central, Srirangam, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2023-06-02
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

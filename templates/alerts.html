@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Risk Alert Center — REALSAFE{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">
+    <h2><span>⚠️</span> Fraud-Risk Alert Intelligence Center</h2>
+    <p>Live registry monitor flagging document discrepancies, duplicate parcels, and cryptographic checksum mismatches.</p>
+  </div>
+  <form method="POST" action="{{ url_for('run_system_wide_scan') }}">
+    <button type="submit" class="btn btn-secondary">
+      <span>🔄</span> Run System-Wide Fleet Scan
+    </button>
+  </form>
+</div>
+
+<!-- Alert Type Filter Tabs -->
+<div class="card" style="padding: 12px 18px; margin-bottom: 20px;">
+  <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 13px;">
+    <a href="{{ url_for('alerts') }}" class="btn btn-secondary btn-sm {% if not type_filter %}active{% endif %}">
+      All Alerts ({{ alerts|length }})
+    </a>
+    <a href="{{ url_for('alerts', type='Hash Mismatch') }}" class="btn btn-secondary btn-sm {% if type_filter == 'Hash Mismatch' %}active{% endif %}" style="color: #f87171;">
+      ⚠️ Tamper / Hash Mismatches
+    </a>
+    <a href="{{ url_for('alerts', type='Potential Duplicate Property') }}" class="btn btn-secondary btn-sm {% if type_filter == 'Potential Duplicate Property' %}active{% endif %}" style="color: #c084fc;">
+      🟣 Duplicate Properties
+    </a>
+    <a href="{{ url_for('alerts', type='Owner Name Mismatch') }}" class="btn btn-secondary btn-sm {% if type_filter == 'Owner Name Mismatch' %}active{% endif %}" style="color: #fbbf24;">
+      🟡 Owner Mismatches
+    </a>
+    <a href="{{ url_for('alerts', type='Survey Number Mismatch') }}" class="btn btn-secondary btn-sm {% if type_filter == 'Survey Number Mismatch' %}active{% endif %}" style="color: #fbbf24;">
+      🟡 Survey Mismatches
+    </a>
+  </div>
+</div>
+
+<!-- Alerts Table -->
+<div class="card" style="padding: 0; overflow: hidden;">
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Severity</th>
+          <th>Property ID</th>
+          <th>Owner Name</th>
+          <th>Alert Classification</th>
+          <th>Discrepancy Details</th>
+          <th>Detected At</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in alerts %}
+          <tr>
+            <td>
+              {% if a.severity == 'High' %}
+                <span class="badge badge-high-risk">🔴 HIGH</span>
+              {% elif a.severity == 'Medium' %}
+                <span class="badge badge-review-required">🟡 MEDIUM</span>
+              {% else %}
+                <span class="badge badge-neutral">⚪ LOW</span>
+              {% endif %}
+            </td>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=a.property_id) }}" class="mono-id" style="text-decoration: none;">
+                {{ a.property_id }}
+              </a>
+            </td>
+            <td><strong>{{ a.owner_name }}</strong></td>
+            <td>
+              <span class="badge badge-neutral" style="color: #fff; font-weight: 600;">
+                {{ a.alert_type }}
+              </span>
+            </td>
+            <td style="max-width: 380px; font-size: 13px; color: #cbd5e1;">
+              {{ a.description }}
+            </td>
+            <td style="font-size: 12px; color: var(--text-muted);">
+              {{ a.created_at[:16] }}
+            </td>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=a.property_id) }}" class="btn btn-secondary btn-sm">
+                Passport &rarr;
+              </a>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="7" style="text-align: center; padding: 32px; color: var(--text-muted);">
+              No active alerts matching the selected category.
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

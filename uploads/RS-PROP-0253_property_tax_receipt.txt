@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0253-4
+Property ID      : RS-PROP-0253
+Registered Owner : Meenakshi Vaidyanathan
+Survey Number    : SUR-169/92
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Padur, Chengalpattu, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2020-03-24
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

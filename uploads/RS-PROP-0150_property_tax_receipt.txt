@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0150-4
+Property ID      : RS-PROP-0150
+Registered Owner : Karthik Sundaram
+Survey Number    : SUR-406/8A
+Plot Land Area   : 3950.0 sq.ft
+Revenue Location : Kovaipudur, Pollachi, Coimbatore
+Execution Date   : 2019-12-21
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

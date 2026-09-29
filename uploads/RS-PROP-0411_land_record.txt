@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0411-2
+Property ID      : RS-PROP-0411
+Registered Owner : Siddharth Gopal
+Survey Number    : SUR-338/12
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Koodal Nagar, Madurai South, Madurai
+State / Region   : Tamil Nadu
+Execution Date   : 2019-12-14
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

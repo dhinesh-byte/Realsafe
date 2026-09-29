@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0102-4
+Property ID      : RS-PROP-0102
+Registered Owner : Revathi Ramesh
+Survey Number    : SUR-319/51
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Thandalam, Walajabad, Kanchipuram
+Execution Date   : 2019-02-15
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

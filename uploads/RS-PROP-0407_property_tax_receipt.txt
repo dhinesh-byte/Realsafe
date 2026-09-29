@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0407-4
+Property ID      : RS-PROP-0407
+Registered Owner : Siddharth Reddy
+Survey Number    : SUR-791/9B
+Plot Land Area   : 5400.0 sq.ft
+Revenue Location : Guduvancheri, Chengalpattu, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2018-11-26
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

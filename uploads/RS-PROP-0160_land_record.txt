@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0160-2
+Property ID      : RS-PROP-0160
+Registered Owner : Lakshmi Pillai
+Survey Number    : SUR-415/71
+Plot Land Area   : 5400.0 sq.ft
+Revenue Location : Madipakkam, Velachery, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2020-02-21
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

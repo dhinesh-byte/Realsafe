@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0344-2
+Property ID      : RS-PROP-0344
+Registered Owner : Lakshmi Balasubramanian
+Survey Number    : SUR-235/2C
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Kovaipudur, Pollachi, Coimbatore
+State / Region   : Tamil Nadu
+Execution Date   : 2019-05-04
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

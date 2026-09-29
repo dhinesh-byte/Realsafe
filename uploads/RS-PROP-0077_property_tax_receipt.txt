@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0077-4
+Property ID      : RS-PROP-0077
+Registered Owner : Divya Chandran
+Survey Number    : SUR-379/42
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Thiruparankundram, Melur, Madurai
+Execution Date   : 2021-02-10
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

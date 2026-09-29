@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0006-4
+Property ID      : RS-PROP-0006
+Registered Owner : Manoj Reddy
+Survey Number    : SUR-505/8B
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Thandalam, Kanchipuram, Kanchipuram
+Execution Date   : 2019-12-18
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

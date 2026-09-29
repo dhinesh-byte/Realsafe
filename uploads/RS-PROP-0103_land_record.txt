@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0103-2
+Property ID      : RS-PROP-0103
+Registered Owner : Manoj Chandran
+Survey Number    : SUR-342/5B
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Srirangam Central, Lalgudi, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2021-05-09
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0292-2
+Property ID      : RS-PROP-0292
+Registered Owner : Meenakshia Rao
+Survey Number    : SUR-277/6A
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Maraimalai Nagar, Vandalur, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2019-07-06
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

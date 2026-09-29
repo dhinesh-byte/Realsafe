@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0332-2
+Property ID      : RS-PROP-0332
+Registered Owner : Suresh Balasubramanian
+Survey Number    : SUR-251/4B
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Siruseri, Thiruporur, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2021-06-28
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

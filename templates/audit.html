@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Immutable Audit Trail Ledger — REALSAFE{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">
+    <h2><span>📜</span> Immutable Platform Audit Trail & Activity Ledger</h2>
+    <p>Complete chronological log of all user submissions, algorithmic checks, admin overrides, and transfer events.</p>
+  </div>
+</div>
+
+<!-- Filter Bar -->
+<div class="card" style="padding: 14px 20px; margin-bottom: 20px;">
+  <form method="GET" action="{{ url_for('audit') }}" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 240px;">
+      <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Search by User, Action, Property ID, or detail keywords...">
+    </div>
+    <button type="submit" class="btn btn-secondary">Filter Ledger</button>
+    {% if query %}
+      <a href="{{ url_for('audit') }}" class="btn btn-secondary">Clear</a>
+    {% endif %}
+  </form>
+</div>
+
+<!-- Audit Log Table -->
+<div class="card" style="padding: 0; overflow: hidden;">
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Log ID</th>
+          <th>Actor / User</th>
+          <th>Action Type</th>
+          <th>Target Property</th>
+          <th>Timestamp</th>
+          <th>Event Details & Status Transition</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+          <tr>
+            <td class="mono-id">#{{ log.id }}</td>
+            <td>
+              <strong style="color: #fff;">{{ log.user_id }}</strong>
+            </td>
+            <td>
+              {% if 'TAMPER' in log.action or 'MISMATCH' in log.action %}
+                <span class="badge badge-high-risk">{{ log.action }}</span>
+              {% elif 'VERIF' in log.action or 'APPROVED' in log.action %}
+                <span class="badge badge-verified">{{ log.action }}</span>
+              {% elif 'TRANSFER' in log.action %}
+                <span class="badge badge-duplicate">{{ log.action }}</span>
+              {% else %}
+                <span class="badge badge-neutral">{{ log.action }}</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if log.property_id %}
+                <a href="{{ url_for('property_passport', property_id=log.property_id) }}" class="mono-id" style="text-decoration: none;">
+                  {{ log.property_id }}
+                </a>
+              {% else %}
+                <span style="color: var(--text-muted);">Fleet</span>
+              {% endif %}
+            </td>
+            <td style="font-size: 12px; color: var(--text-muted);">{{ log.timestamp }}</td>
+            <td style="font-size: 13px; color: #cbd5e1; max-width: 450px;">
+              {{ log.details }}
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="6" style="text-align: center; padding: 32px; color: var(--text-muted);">
+              No audit log entries matching your search.
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{
+  "model_name": "Random Forest Classifier",
+  "model_version": "REALSAFE-RF-v1.0",
+  "training_date": "2026-09-15 09:22:38",
+  "dataset_size": 520,
+  "train_samples": 416,
+  "test_samples": 104,
+  "feature_count": 8,
+  "features": [
+    "owner_mismatch",
+    "survey_mismatch",
+    "area_mismatch",
+    "duplicate_property",
+    "hash_mismatch",
+    "ownership_conflict",
+    "suspicious_transfer",
+    "missing_document"
+  ],
+  "feature_labels": {
+    "owner_mismatch": "Owner Name Discrepancy",
+    "survey_mismatch": "Survey Number Discrepancy",
+    "area_mismatch": "Land Area Variance",
+    "duplicate_property": "Duplicate Property Cluster",
+    "hash_mismatch": "Document Hash Tamper Flag",
+    "ownership_conflict": "Title Chain Timeline Gap",
+    "suspicious_transfer": "High Velocity Transfers",
+    "missing_document": "Incomplete Primary Title Vault"
+  },
+  "selection_rationale": "Random Forest is chosen as the primary classification model because decision trees model non-linear combinatorial interactions between fraud signals (e.g. rapid flips combined with area variance or hash alteration) and natively integrate with TreeSHAP for game-theoretic local explainability.",
+  "random_forest": {
+    "model_name": "Random Forest Classifier",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": [
+      [
+        76,
+        0
+      ],
+      [
+        0,
+        28
+      ]
+    ],
+    "parameters": {
+      "n_estimators": 100,
+      "max_depth": 6,
+      "class_weight": "balanced",
+      "random_state": 42
+    }
+  },
+  "logistic_regression": {
+    "model_name": "Logistic Regression Baseline",
+    "accuracy": 0.9904,
+    "precision": 1.0,
+    "recall": 0.9643,
+    "f1_score": 0.9818,
+    "confusion_matrix": [
+      [
+        76,
+        0
+      ],
+      [
+        1,
+        27
+      ]
+    ],
+    "parameters": {
+      "max_iter": 1000,
+      "class_weight": "balanced",
+      "random_state": 42
+    }
+  }
+}

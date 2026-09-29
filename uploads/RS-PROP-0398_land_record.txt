@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0398-2
+Property ID      : RS-PROP-0398
+Registered Owner : Venkatesh Rao
+Survey Number    : SUR-314/81
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Siruseri, Maduranthakam, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2020-03-19
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0337-2
+Property ID      : RS-PROP-0337
+Registered Owner : Aravind Kumar
+Survey Number    : SUR-192/4C
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Gandhipuram, Pollachi, Coimbatore
+State / Region   : Tamil Nadu
+Execution Date   : 2021-11-11
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0039-4
+Property ID      : RS-PROP-0039
+Registered Owner : Sundar Natarajan
+Survey Number    : SUR-129/8C
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Gandhipuram, Sulur, Coimbatore
+Execution Date   : 2019-06-26
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

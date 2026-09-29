@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0474-4
+Property ID      : RS-PROP-0474
+Registered Owner : Bhavani Swaminathan
+Survey Number    : SUR-468/7A
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Padur, Thiruporur, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2019-10-20
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

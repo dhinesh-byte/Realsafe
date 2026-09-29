@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Register Property — REALSAFE{% endblock %}
+
+{% block content %}
+<div style="max-width: 800px; margin: 0 auto;">
+  <div class="page-header">
+    <div class="page-title">
+      <h2><span>➕</span> Register New Property Record</h2>
+      <p>Enter cadastral and ownership details to generate a permanent Property Digital Passport.</p>
+    </div>
+  </div>
+
+  <div class="card" style="padding: 28px;">
+    <form method="POST" action="{{ url_for('new_property') }}">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Owner Full Name *
+          </label>
+          <input type="text" name="owner_name" class="form-control" placeholder="e.g. Arun Kumar" required value="{{ session.get('user_name', 'Arun Kumar') }}">
+        </div>
+
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Verified User ID *
+          </label>
+          <input type="text" name="owner_id" class="form-control" placeholder="e.g. USR-1001" required value="{{ session.get('user_id', 'USR-1001') }}">
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Survey Number *
+          </label>
+          <input type="text" name="survey_number" class="form-control" placeholder="e.g. SUR-458/2A" required>
+        </div>
+
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Plot Land Area (sq.ft) *
+          </label>
+          <input type="number" step="any" name="land_area" class="form-control" placeholder="e.g. 2400" required>
+        </div>
+
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Property Type *
+          </label>
+          <select name="property_type" class="form-control" required>
+            <option value="Residential Plot">Residential Plot</option>
+            <option value="Independent Villa">Independent Villa</option>
+            <option value="Commercial Space">Commercial Space</option>
+            <option value="Multi-family Apartment">Multi-family Apartment</option>
+            <option value="Agricultural Land">Agricultural Land</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            District *
+          </label>
+          <select name="district" class="form-control" required>
+            <option value="Chennai">Chennai</option>
+            <option value="Chengalpattu">Chengalpattu</option>
+            <option value="Kanchipuram">Kanchipuram</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Tiruchirappalli">Tiruchirappalli</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Taluk / Sub-District *
+          </label>
+          <input type="text" name="taluk" class="form-control" placeholder="e.g. Tambaram" required>
+        </div>
+
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Village / Revenue Locality *
+          </label>
+          <input type="text" name="village" class="form-control" placeholder="e.g. Madipakkam" required>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Registration Date *
+          </label>
+          <input type="date" name="registration_date" class="form-control" required value="2024-03-15">
+        </div>
+
+        <div>
+          <label style="font-size: 12.5px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+            Prior Title Holder (Previous Owner)
+          </label>
+          <input type="text" name="previous_owner" class="form-control" placeholder="e.g. Sundar Raman">
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <a href="{{ url_for('properties') }}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary" style="padding: 10px 24px;">
+          <span>🛡️</span> Create Digital Passport & Run Baseline Scan
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

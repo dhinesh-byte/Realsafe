@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0339-4
+Property ID      : RS-PROP-0339
+Registered Owner : Meenakshi Kumar
+Survey Number    : SUR-421/2A
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Gandhipuram, Coimbatore North, Coimbatore
+State / Region   : Tamil Nadu
+Execution Date   : 2022-12-25
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

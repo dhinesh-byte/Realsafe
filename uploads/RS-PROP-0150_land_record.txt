@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0150-2
+Property ID      : RS-PROP-0150
+Registered Owner : Balaji Murugan
+Survey Number    : SUR-135/4C
+Plot Land Area   : 5400.0 sq.ft
+Revenue Location : Oragadam, Kundrathur, Kanchipuram
+State / Region   : Tamil Nadu
+Execution Date   : 2022-08-02
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

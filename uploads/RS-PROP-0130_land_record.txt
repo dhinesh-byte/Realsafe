@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0130-2
+Property ID      : RS-PROP-0130
+Registered Owner : Manoj Pillai
+Survey Number    : SUR-238/7A
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Koodal Nagar, Thirumangalam, Madurai
+State / Region   : Tamil Nadu
+Execution Date   : 2019-12-28
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

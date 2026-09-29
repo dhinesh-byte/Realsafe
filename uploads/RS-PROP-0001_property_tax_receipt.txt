@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0001-4
+Property ID      : RS-PROP-0001
+Registered Owner : Arun Kumar
+Survey Number    : SUR-458/2A
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Madipakkam, Tambaram, Chennai
+Execution Date   : 2022-06-14
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

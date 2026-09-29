@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0116-2
+Property ID      : RS-PROP-0116
+Registered Owner : Ramesh Kumar
+Survey Number    : SUR-119/8C
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Anna Nagar, Madurai North, Madurai
+Execution Date   : 2021-12-07
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

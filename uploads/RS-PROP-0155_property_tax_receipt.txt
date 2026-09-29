@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0155-4
+Property ID      : RS-PROP-0155
+Registered Owner : Divya Ramesh
+Survey Number    : SUR-327/92
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Pallavaram, Tambaram, Chennai
+Execution Date   : 2023-10-08
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

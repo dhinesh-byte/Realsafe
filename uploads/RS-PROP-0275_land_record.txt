@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0275-2
+Property ID      : RS-PROP-0275
+Registered Owner : Suresh Kumar
+Survey Number    : SUR-981/5A
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Kallakudi, Lalgudi, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2023-10-13
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

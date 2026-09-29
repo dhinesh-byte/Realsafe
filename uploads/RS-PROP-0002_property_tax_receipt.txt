@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0002-4
+Property ID      : RS-PROP-0002
+Registered Owner : Ganesh Pillai
+Survey Number    : SUR-833/91
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Velachery East, Mylapore, Chennai
+Execution Date   : 2022-05-26
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

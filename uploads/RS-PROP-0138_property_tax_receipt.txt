@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0138-4
+Property ID      : RS-PROP-0138
+Registered Owner : Nandhini Chandran
+Survey Number    : SUR-420/7A
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Mangadu, Kanchipuram, Kanchipuram
+Execution Date   : 2019-01-09
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

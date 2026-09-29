@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0490-2
+Property ID      : RS-PROP-0490
+Registered Owner : Vignesh Ganesan
+Survey Number    : SUR-859/5A
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Adambakkam, Alandur, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2018-09-01
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

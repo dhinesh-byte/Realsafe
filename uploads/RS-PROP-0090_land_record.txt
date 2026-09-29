@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0090-2
+Property ID      : RS-PROP-0090
+Registered Owner : Aravind Subramanian
+Survey Number    : SUR-686/2B
+Plot Land Area   : 1200.0 sq.ft
+Revenue Location : Kallakudi, Srirangam, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2020-07-05
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

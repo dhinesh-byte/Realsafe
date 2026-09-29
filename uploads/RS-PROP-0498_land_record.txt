@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0498-2
+Property ID      : RS-PROP-0498
+Registered Owner : Karthik Natarajan
+Survey Number    : SUR-370/62
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Madipakkam, Guindy, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2023-03-05
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

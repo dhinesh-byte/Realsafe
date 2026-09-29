@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0195-4
+Property ID      : RS-PROP-0195
+Registered Owner : Rajesh Ramesh
+Survey Number    : SUR-908/9C
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Ponmalai, Lalgudi, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2020-09-08
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

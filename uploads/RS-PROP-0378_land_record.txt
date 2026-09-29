@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0378-2
+Property ID      : RS-PROP-0378
+Registered Owner : Poornima Iyer
+Survey Number    : SUR-750/51
+Plot Land Area   : 3350.0 sq.ft
+Revenue Location : Othakadai, Thirumangalam, Madurai
+State / Region   : Tamil Nadu
+Execution Date   : 2023-06-11
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

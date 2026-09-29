@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0106-4
+Property ID      : RS-PROP-0106
+Registered Owner : Meenakshi Natarajan
+Survey Number    : SUR-740/52
+Plot Land Area   : 9950.0 sq.ft
+Revenue Location : Kattur, Lalgudi, Tiruchirappalli
+Execution Date   : 2022-11-06
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

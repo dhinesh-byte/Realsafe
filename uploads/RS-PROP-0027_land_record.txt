@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0027-2
+Property ID      : RS-PROP-0027
+Registered Owner : Bhavani Kumar
+Survey Number    : SUR-543/61
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Saravanampatti, Sulur, Coimbatore
+State / Region   : Tamil Nadu
+Execution Date   : 2019-12-17
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

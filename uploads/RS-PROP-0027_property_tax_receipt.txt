@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0027-4
+Property ID      : RS-PROP-0027
+Registered Owner : Bhavani Natarajan
+Survey Number    : SUR-774/2C
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Anna Nagar, Melur, Madurai
+Execution Date   : 2023-10-11
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

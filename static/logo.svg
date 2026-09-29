@@ -1,0 +1,22 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="28" y1="24" x2="182" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="0.35" stop-color="#3B82F6"/>
+      <stop offset="0.7" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#F43F5E"/>
+    </linearGradient>
+    <linearGradient id="innerGrad" x1="58" y1="52" x2="170" y2="172" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDF2F8"/>
+      <stop offset="0.5" stop-color="#F9A8D4"/>
+      <stop offset="1" stop-color="#FCA5A5"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="16" y="16" width="188" height="188" rx="44" fill="url(#bgGrad)"/>
+  <path d="M110 38L154 54V98.2C154 133.4 136.2 163.8 110 179C83.8 163.8 66 133.4 66 98.2V54L110 38Z" fill="rgba(10,14,24,0.22)"/>
+  <path d="M110 46L150 60V98.9C150 129.8 135.8 156.8 110 169C84.2 156.8 70 129.8 70 98.9V60L110 46Z" fill="url(#innerGrad)"/>
+  <path d="M84 111L101 128L138 90" stroke="#1A0D1A" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M43 150C67 142 80 146 93 154C105 162 122 168 160 152" stroke="#1A0D1A" stroke-width="7" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="150" cy="74" r="8" fill="#fff" opacity="0.8"/>
+</svg>

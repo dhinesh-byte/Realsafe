@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0464-2
+Property ID      : RS-PROP-0464
+Registered Owner : Dinesha Natarajan
+Survey Number    : SUR-371/2B
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Mangadu, Kundrathur, Kanchipuram
+State / Region   : Tamil Nadu
+Execution Date   : 2019-06-05
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0043-2
+Property ID      : RS-PROP-0043
+Registered Owner : Kavitha Kumar
+Survey Number    : SUR-400/6C
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Madipakkam, Guindy, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2019-09-14
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

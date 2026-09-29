@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0491-2
+Property ID      : RS-PROP-0491
+Registered Owner : Venkatesh Subramanian
+Survey Number    : SUR-304/2C
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Thandalam, Walajabad, Kanchipuram
+State / Region   : Tamil Nadu
+Execution Date   : 2020-08-24
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0373-4
+Property ID      : RS-PROP-0373
+Registered Owner : Revathi Iyer
+Survey Number    : SUR-926/92
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Guduvancheri, Maduranthakam, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2022-01-16
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

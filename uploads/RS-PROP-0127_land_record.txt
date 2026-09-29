@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0127-2
+Property ID      : RS-PROP-0127
+Registered Owner : Dinesha Kumar
+Survey Number    : SUR-934/72
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Peelamedu, Coimbatore North, Coimbatore
+State / Region   : Tamil Nadu
+Execution Date   : 2021-07-22
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

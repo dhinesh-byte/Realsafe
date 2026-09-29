@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0064-4
+Property ID      : RS-PROP-0064
+Registered Owner : Swetha Kumar
+Survey Number    : SUR-763/21
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Anna Nagar, Thirumangalam, Madurai
+Execution Date   : 2021-02-05
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

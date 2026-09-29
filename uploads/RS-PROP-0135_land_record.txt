@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0135-2
+Property ID      : RS-PROP-0135
+Registered Owner : Sundar Gopal
+Survey Number    : SUR-205/6C
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Madipakkam, Sholinganallur, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2021-03-21
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

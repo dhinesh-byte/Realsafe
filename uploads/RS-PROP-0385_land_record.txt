@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0385-2
+Property ID      : RS-PROP-0385
+Registered Owner : Poornima Sundaram
+Survey Number    : SUR-672/1C
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Madipakkam, Sholinganallur, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2018-10-25
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

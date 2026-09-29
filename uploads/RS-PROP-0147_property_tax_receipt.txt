@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0147-4
+Property ID      : RS-PROP-0147
+Registered Owner : Manoj Rao
+Survey Number    : SUR-402/4A
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Singanallur, Coimbatore South, Coimbatore
+Execution Date   : 2019-07-23
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

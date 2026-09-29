@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}Cryptographic Document Vault — REALSAFE{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">
+    <h2><span>📁</span> Cryptographic Document Vault & Verification Center</h2>
+    <p>Upload property documents, calculate SHA-256 signatures, and inspect real-time integrity checks.</p>
+  </div>
+</div>
+
+<!-- Upload New Document Form -->
+<div class="card" style="background: linear-gradient(135deg, #111d33 0%, #172747 100%); border-color: #2b3d63;">
+  <div class="card-header">
+    <h3><span>📤</span> Upload & Verify New Property Document</h3>
+    <span class="badge badge-neutral">SHA-256 Hashing Engine Active</span>
+  </div>
+
+  <form method="POST" action="{{ url_for('upload_document_global') }}" enctype="multipart/form-data">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 16px;">
+      <div>
+        <label style="font-size: 12px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+          Target Property ID *
+        </label>
+        <select name="property_id" class="form-control" required>
+          <option value="">Select Property...</option>
+          {% for p in properties %}
+            <option value="{{ p.property_id }}">{{ p.property_id }} — {{ p.owner_name }} ({{ p.village }})</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div>
+        <label style="font-size: 12px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+          Document Classification *
+        </label>
+        <select name="document_type" class="form-control" required>
+          <option value="Sale Deed">Sale Deed</option>
+          <option value="Ownership Certificate">Ownership Certificate</option>
+          <option value="Property Tax Receipt">Property Tax Receipt</option>
+          <option value="Encumbrance Certificate">Encumbrance Certificate</option>
+          <option value="Land Record">Land Record (Patta/Chitta)</option>
+          <option value="Registration Record">Registration Record</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="font-size: 12px; color: var(--text-secondary); display: block; margin-bottom: 6px; font-weight: 500;">
+          Select File * (.txt, .pdf, .doc, .png, .jpg)
+        </label>
+        <input type="file" name="file" class="form-control" required>
+      </div>
+    </div>
+
+    <!-- Extracted Document Metadata Fields (Simulating OCR Extraction) -->
+    <div style="background: #091322; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px; margin-bottom: 16px;">
+      <div style="font-size: 11px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.6px; margin-bottom: 10px;">
+        Document Metadata (Extracted / Stated on Document for Cross-Comparison)
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+        <div>
+          <label style="font-size: 11.5px; color: var(--text-muted); display: block; margin-bottom: 4px;">Owner Name on Document</label>
+          <input type="text" name="doc_owner" class="form-control" placeholder="Leave blank to match property owner">
+        </div>
+        <div>
+          <label style="font-size: 11.5px; color: var(--text-muted); display: block; margin-bottom: 4px;">Survey Number on Document</label>
+          <input type="text" name="doc_survey" class="form-control" placeholder="e.g. SUR-458/2A">
+        </div>
+        <div>
+          <label style="font-size: 11.5px; color: var(--text-muted); display: block; margin-bottom: 4px;">Land Area (sq.ft)</label>
+          <input type="number" step="any" name="doc_area" class="form-control" placeholder="e.g. 2400">
+        </div>
+        <div>
+          <label style="font-size: 11.5px; color: var(--text-muted); display: block; margin-bottom: 4px;">Village / Location</label>
+          <input type="text" name="doc_location" class="form-control" placeholder="e.g. Tambaram, Chennai">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="padding: 10px 20px;">
+      <span>🔒</span> Save File, Compute SHA-256 & Run Integrity Scan
+    </button>
+  </form>
+</div>
+
+<!-- Global Documents List -->
+<div class="card" style="padding: 0; overflow: hidden;">
+  <div class="card-header" style="padding: 16px 20px; margin: 0;">
+    <h3><span>📑</span> Registered Document Ledger ({{ total_docs }} Total Documents)</h3>
+    <span class="badge badge-neutral">Cryptographic Ledger</span>
+  </div>
+
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Property ID</th>
+          <th>Document Type</th>
+          <th>Filename</th>
+          <th>SHA-256 Hash</th>
+          <th>Upload Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for doc in documents %}
+          <tr>
+            <td class="mono-id">{{ doc.document_id }}</td>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=doc.property_id) }}" class="mono-id" style="text-decoration: none;">
+                {{ doc.property_id }}
+              </a>
+            </td>
+            <td><strong>{{ doc.document_type }}</strong></td>
+            <td style="font-size: 12px; color: var(--text-secondary);">{{ doc.filename }}</td>
+            <td>
+              <span class="mono-hash" title="{{ doc.sha256_hash }}">{{ doc.sha256_hash }}</span>
+            </td>
+            <td>{{ doc.upload_date }}</td>
+            <td>
+              {% if doc.verification_status == 'Verified' %}
+                <span class="badge badge-verified">✓ Match</span>
+              {% elif doc.verification_status == 'Hash Mismatch' %}
+                <span class="badge badge-high-risk">⚠ Hash Mismatch</span>
+              {% else %}
+                <span class="badge badge-review-required">⚠ Review Req.</span>
+              {% endif %}
+            </td>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=doc.property_id) }}" class="btn btn-secondary btn-sm">
+                View &rarr;
+              </a>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="8" style="text-align: center; padding: 32px; color: var(--text-muted);">
+              No documents currently recorded in vault.
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

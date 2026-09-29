@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0003-4
+Property ID      : RS-PROP-0003
+Registered Owner : Lakshmi Ramesh
+Survey Number    : SUR-467/62
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Madipakkam, Velachery, Chennai
+Execution Date   : 2023-08-18
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

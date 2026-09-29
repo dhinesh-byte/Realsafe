@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0025-2
+Property ID      : RS-PROP-0025
+Registered Owner : Vijay Kumar
+Survey Number    : SUR-229/8A
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Anna Nagar, Madurai South, Madurai
+State / Region   : Tamil Nadu
+Execution Date   : 2023-05-25
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

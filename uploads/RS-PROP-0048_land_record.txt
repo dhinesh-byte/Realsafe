@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0048-2
+Property ID      : RS-PROP-0048
+Registered Owner : Gayathri Reddy
+Survey Number    : SUR-942/6A
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Ponmalai, Lalgudi, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2018-10-18
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

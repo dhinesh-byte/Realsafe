@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0245-2
+Property ID      : RS-PROP-0245
+Registered Owner : Arun Gopal
+Survey Number    : SUR-142/62
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Adambakkam, Guindy, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2022-12-08
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

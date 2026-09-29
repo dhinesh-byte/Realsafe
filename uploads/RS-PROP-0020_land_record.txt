@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0020-2
+Property ID      : RS-PROP-0020
+Registered Owner : Swetha Natarajan
+Survey Number    : SUR-783/92
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Kovaipudur, Coimbatore North, Coimbatore
+State / Region   : Tamil Nadu
+Execution Date   : 2022-12-17
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

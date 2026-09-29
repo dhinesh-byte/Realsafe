@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0013-4
+Property ID      : RS-PROP-0013
+Registered Owner : Divya Natarajan
+Survey Number    : SUR-541/61
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Thoraipakkam, Tambaram, Chennai
+Execution Date   : 2023-01-22
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

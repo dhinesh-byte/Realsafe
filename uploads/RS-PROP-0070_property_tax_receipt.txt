@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0070-4
+Property ID      : RS-PROP-0070
+Registered Owner : Vijay Iyer
+Survey Number    : SUR-829/8A
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Ponmalai, Tiruchirappalli West, Tiruchirappalli
+Execution Date   : 2022-03-03
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0499-2
+Property ID      : RS-PROP-0499
+Registered Owner : Ramesh Balasubramanian
+Survey Number    : SUR-777/8C
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Thiruparankundram, Madurai South, Madurai
+State / Region   : Tamil Nadu
+Execution Date   : 2021-04-03
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

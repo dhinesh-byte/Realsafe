@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0221-2
+Property ID      : RS-PROP-0221
+Registered Owner : Nandhini Rao
+Survey Number    : SUR-287/9C
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Kovaipudur, Pollachi, Coimbatore
+State / Region   : Tamil Nadu
+Execution Date   : 2024-10-05
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

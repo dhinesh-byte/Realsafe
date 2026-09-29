@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0128-2
+Property ID      : RS-PROP-0128
+Registered Owner : Gayathri Srinivasan
+Survey Number    : SUR-686/2C
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Kallakudi, Thiruverumbur, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2022-01-25
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

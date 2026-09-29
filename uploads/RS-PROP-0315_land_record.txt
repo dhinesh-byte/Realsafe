@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0315-2
+Property ID      : RS-PROP-0315
+Registered Owner : Lakshmi Ganesan
+Survey Number    : SUR-377/6A
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Mangadu, Walajabad, Kanchipuram
+State / Region   : Tamil Nadu
+Execution Date   : 2020-03-01
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

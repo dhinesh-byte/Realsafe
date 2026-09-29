@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0091-4
+Property ID      : RS-PROP-0091
+Registered Owner : Venkatesh Subramanian
+Survey Number    : SUR-193/41
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Kovaipudur, Coimbatore North, Coimbatore
+Execution Date   : 2021-01-13
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

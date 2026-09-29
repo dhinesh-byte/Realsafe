@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0031-4
+Property ID      : RS-PROP-0031
+Registered Owner : Karthik Sundaram
+Survey Number    : SUR-810/3B
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Siruseri, Chengalpattu, Chengalpattu
+Execution Date   : 2021-06-18
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

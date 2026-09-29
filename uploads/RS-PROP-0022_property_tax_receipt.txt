@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0022-4
+Property ID      : RS-PROP-0022
+Registered Owner : Divya Pillai
+Survey Number    : SUR-985/3B
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Kattur, Srirangam, Tiruchirappalli
+Execution Date   : 2019-12-11
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

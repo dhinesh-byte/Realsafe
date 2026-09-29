@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0009-4
+Property ID      : RS-PROP-0009
+Registered Owner : Rajesh Subramanian
+Survey Number    : SUR-482/32
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Kattur, Srirangam, Tiruchirappalli
+Execution Date   : 2022-06-16
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

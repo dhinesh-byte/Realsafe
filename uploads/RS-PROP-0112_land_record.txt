@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0112-2
+Property ID      : RS-PROP-0112
+Registered Owner : Manoj Murugan
+Survey Number    : SUR-395/21/ALT
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Maraimalai Nagar, Thiruporur, Chengalpattu
+Execution Date   : 2022-05-27
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

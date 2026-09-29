@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0190-2
+Property ID      : RS-PROP-0190
+Registered Owner : Harini Rao
+Survey Number    : SUR-241/72
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Oragadam, Kundrathur, Kanchipuram
+State / Region   : Tamil Nadu
+Execution Date   : 2024-12-18
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

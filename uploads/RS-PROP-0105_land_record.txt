@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0105-2
+Property ID      : RS-PROP-0105
+Registered Owner : Madhavana Ganesan
+Survey Number    : SUR-348/5B/ALT
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Thiruparankundram, Madurai South, Madurai
+State / Region   : Tamil Nadu
+Execution Date   : 2018-08-28
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

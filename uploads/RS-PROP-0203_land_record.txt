@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0203-2
+Property ID      : RS-PROP-0203
+Registered Owner : Manoj Sundaram
+Survey Number    : SUR-561/62
+Plot Land Area   : 3000.0 sq.ft
+Revenue Location : Siruseri, Thiruporur, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2022-03-19
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

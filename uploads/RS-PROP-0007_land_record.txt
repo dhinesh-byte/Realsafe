@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0007-2
+Property ID      : RS-PROP-0007
+Registered Owner : Arjun Kumar
+Survey Number    : SUR-597/8B
+Plot Land Area   : 4800.0 sq.ft
+Revenue Location : Siruseri, Chengalpattu, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2019-07-01
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

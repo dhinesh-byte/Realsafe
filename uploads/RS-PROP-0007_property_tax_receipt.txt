@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0007-4
+Property ID      : RS-PROP-0007
+Registered Owner : Arun Kumar
+Survey Number    : SUR-981/2B
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Saravanampatti, Coimbatore South, Coimbatore
+Execution Date   : 2021-10-03
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

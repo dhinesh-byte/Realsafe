@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0159-4
+Property ID      : RS-PROP-0159
+Registered Owner : Dinesh Gopal
+Survey Number    : SUR-918/9B
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Madipakkam, Mylapore, Chennai
+Execution Date   : 2019-08-04
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

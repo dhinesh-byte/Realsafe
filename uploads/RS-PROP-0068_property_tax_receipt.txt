@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0068-4
+Property ID      : RS-PROP-0068
+Registered Owner : Deepa Sundaram
+Survey Number    : SUR-212/1B
+Plot Land Area   : 1200.0 sq.ft
+Revenue Location : Anna Nagar, Thirumangalam, Madurai
+Execution Date   : 2019-10-11
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

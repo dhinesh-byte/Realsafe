@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0090-4
+Property ID      : RS-PROP-0090
+Registered Owner : Vijay Murugan
+Survey Number    : SUR-936/42
+Plot Land Area   : 1800.0 sq.ft
+Revenue Location : Anna Nagar, Melur, Madurai
+Execution Date   : 2018-11-16
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0360-2
+Property ID      : RS-PROP-0360
+Registered Owner : Revathi Subramanian
+Survey Number    : SUR-548/8A
+Plot Land Area   : 1500.0 sq.ft
+Revenue Location : Kallakudi, Tiruchirappalli West, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2022-02-27
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

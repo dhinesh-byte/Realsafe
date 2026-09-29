@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}Multi-Vector Verification Engine — REALSAFE{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">
+    <h2><span>🔬</span> Multi-Vector Automated Verification Center</h2>
+    <p>Algorithmic discrepancy analysis, duplicate spatial clustering, and cryptographic tamper scans.</p>
+  </div>
+  <div style="display: flex; gap: 10px;">
+    <form method="POST" action="{{ url_for('run_duplicate_scan') }}">
+      <button type="submit" class="btn btn-secondary">
+        <span>🟣</span> Run Duplicate Cluster Scan
+      </button>
+    </form>
+    <form method="POST" action="{{ url_for('run_system_wide_scan') }}">
+      <button type="submit" class="btn btn-primary">
+        <span>🔄</span> Run Fleet Verification Scan
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Architecture & Pipeline Cards -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px;">
+  <div class="card" style="margin-bottom: 0;">
+    <div style="font-size: 24px; margin-bottom: 8px;">1️⃣</div>
+    <strong style="color: #fff;">Document Tamper Detection</strong>
+    <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 6px;">
+      Computes SHA-256 binary hash of uploaded deeds/certificates and verifies against the immutable registration ledger.
+    </p>
+  </div>
+
+  <div class="card" style="margin-bottom: 0;">
+    <div style="font-size: 24px; margin-bottom: 8px;">2️⃣</div>
+    <strong style="color: #fff;">Cross-Document Inconsistency</strong>
+    <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 6px;">
+      Cross-reconciles Owner Name, Survey Number, Land Area, and Location across Sale Deeds, Pattas, and EC records.
+    </p>
+  </div>
+
+  <div class="card" style="margin-bottom: 0;">
+    <div style="font-size: 24px; margin-bottom: 8px;">3️⃣</div>
+    <strong style="color: #fff;">Duplicate Property Detection</strong>
+    <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 6px;">
+      Identifies multi-registration fraud where identical survey numbers and land areas appear under conflicting owners.
+    </p>
+  </div>
+</div>
+
+<!-- Verification Audit Records Table -->
+<div class="card" style="padding: 0; overflow: hidden;">
+  <div class="card-header" style="padding: 16px 20px; margin: 0;">
+    <h3><span>📑</span> Verification Audit Records ({{ records|length }})</h3>
+    <span class="badge badge-neutral">Execution Ledger</span>
+  </div>
+
+  <div class="table-responsive">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Audit ID</th>
+          <th>Property ID</th>
+          <th>Type</th>
+          <th>Hash Integrity</th>
+          <th>Cadastral Check</th>
+          <th>ML Prediction</th>
+          <th>Risk Score / Status</th>
+          <th>Timestamp</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in records %}
+          <tr>
+            <td class="mono-id">#{{ r.id }}</td>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=r.property_id) }}" class="mono-id" style="text-decoration: none; font-weight: 700;">
+                {{ r.property_id }}
+              </a>
+            </td>
+            <td><strong style="color: #fff;">{{ r.verification_type }}</strong></td>
+            <td>
+              {% if r.hash_result == 'Match' %}
+                <span class="badge badge-verified" style="font-size: 11px;">✓ Match</span>
+              {% elif r.hash_result == 'Mismatch' %}
+                <span class="badge badge-high-risk" style="font-size: 11px;">⚠ Mismatch</span>
+              {% else %}
+                <span style="color: var(--text-muted); font-size: 11px;">{{ r.hash_result or '—' }}</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if r.mismatch_result == 'Consistent' %}
+                <span class="badge badge-verified" style="font-size: 11px;">✓ Clean</span>
+              {% elif r.mismatch_result == 'Discrepancy' %}
+                <span class="badge badge-review-required" style="font-size: 11px;">⚠ Discrepancy</span>
+              {% else %}
+                <span style="color: var(--text-muted); font-size: 11px;">{{ r.mismatch_result or '—' }}</span>
+              {% endif %}
+            </td>
+            <td>
+              {% if r.ml_prediction == 'Suspicious' %}
+                <span style="color: #f87171; font-weight: 700; font-size: 12px;">Suspicious</span>
+              {% elif r.ml_prediction == 'Normal' %}
+                <span style="color: #34d399; font-weight: 600; font-size: 12px;">Normal</span>
+              {% else %}
+                <span style="color: var(--text-muted); font-size: 11px;">—</span>
+              {% endif %}
+              {% if r.ml_probability is not none and r.ml_probability != '' %}
+                <div style="font-size: 10.5px; color: var(--text-muted); font-family: var(--font-mono);">
+                  {{ (r.ml_probability * 100)|round(1) if r.ml_probability <= 1 else r.ml_probability|round(1) }}%
+                </div>
+              {% endif %}
+            </td>
+            <td>
+              {% set final_stat = r.final_status or r.result %}
+              {% if final_stat == 'Verified' %}
+                <span class="badge badge-verified">{{ r.risk_score or 0 }}/100 ✓</span>
+              {% elif 'Critical' in final_stat or (r.risk_score and r.risk_score >= 80) %}
+                <span class="badge badge-critical-risk">{{ r.risk_score or 80 }}/100 🛑</span>
+              {% elif 'High' in final_stat or (r.risk_score and r.risk_score >= 60) %}
+                <span class="badge badge-high-risk">{{ r.risk_score or 60 }}/100 🔴</span>
+              {% else %}
+                <span class="badge badge-review-required">{{ r.risk_score or 30 }}/100 ⚠</span>
+              {% endif %}
+            </td>
+            <td style="font-size: 12px; color: var(--text-secondary);">{{ r.checked_at }}</td>
+            <td>
+              <a href="{{ url_for('property_passport', property_id=r.property_id) }}" class="btn btn-secondary btn-sm">
+                Passport &rarr;
+              </a>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="9" style="text-align: center; padding: 32px; color: var(--text-muted);">
+              No verification records logged yet. Run a fleet scan to execute checks.
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

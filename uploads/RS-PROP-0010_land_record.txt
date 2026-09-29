@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0010-2
+Property ID      : RS-PROP-0010
+Registered Owner : Deepa Ganesan
+Survey Number    : SUR-457/2B
+Plot Land Area   : 3600.0 sq.ft
+Revenue Location : Kelambakkam, Thiruporur, Chengalpattu
+State / Region   : Tamil Nadu
+Execution Date   : 2019-08-27
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

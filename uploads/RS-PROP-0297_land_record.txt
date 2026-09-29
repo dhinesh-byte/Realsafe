@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0297-2
+Property ID      : RS-PROP-0297
+Registered Owner : Gayathri Iyer
+Survey Number    : SUR-307/6B
+Plot Land Area   : 1200.0 sq.ft
+Revenue Location : Srirangam Central, Lalgudi, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2022-01-09
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

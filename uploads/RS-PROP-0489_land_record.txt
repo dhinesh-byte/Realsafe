@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: LAND RECORD
+===========================================================
+Document ID      : RS-DOC-0489-2
+Property ID      : RS-PROP-0489
+Registered Owner : Divya Gopal
+Survey Number    : SUR-523/21
+Plot Land Area   : 1850.0 sq.ft
+Revenue Location : Madipakkam, Velachery, Chennai
+State / Region   : Tamil Nadu
+Execution Date   : 2023-07-13
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

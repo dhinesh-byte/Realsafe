@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: ENCUMBRANCE CERTIFICATE
+===========================================================
+Document ID      : RS-DOC-0005-3
+Property ID      : RS-PROP-0005
+Registered Owner : Kavitha Rao
+Survey Number    : SUR-573/7C
+Plot Land Area   : 9600.0 sq.ft
+Revenue Location : Kelambakkam, Chengalpattu, Chengalpattu
+Execution Date   : 2023-06-27
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================

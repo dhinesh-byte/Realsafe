@@ -1,0 +1,15 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0511-4
+Property ID      : RS-PROP-0511
+Registered Owner : Revathi Subramanian
+Survey Number    : SUR-699/2C
+Plot Land Area   : 2400.0 sq.ft
+Revenue Location : Ponmalai, Srirangam, Tiruchirappalli
+State / Region   : Tamil Nadu
+Execution Date   : 2021-06-08
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Dataset Notice   : Synthetic development/demo dataset. Fictional data.
+===========================================================

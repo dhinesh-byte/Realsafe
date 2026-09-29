@@ -1,0 +1,14 @@
+===========================================================
+          REALSAFE DIGITAL VERIFICATION ARCHIVE
+           DEMO DOCUMENT: PROPERTY TAX RECEIPT
+===========================================================
+Document ID      : RS-DOC-0128-4
+Property ID      : RS-PROP-0128
+Registered Owner : Ananya Reddy
+Survey Number    : SUR-622/8A
+Plot Land Area   : 5400.0 sq.ft
+Revenue Location : Koodal Nagar, Melur, Madurai
+Execution Date   : 2022-07-15
+Issuing Office   : Sub-Registrar Office, Revenue Administration
+Disclaimer       : Fictional synthetic document for fraud detection demo.
+===========================================================
